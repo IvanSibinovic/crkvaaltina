@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/fonts.css" type="text/css"/>
+  <title>Crkva Altina</title>
+</head>
+<style type="text/css">
+
+  *{
+    margin: 0; padding: 0;
+    font-family: 'Ponomar Unicode';
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+  .fisrtScreen {
+    width: 100%;
+    background:
+radial-gradient(circle, transparent 20%, #e2e5e8 20%, #e2e5e8 80%, transparent 80%, transparent),
+radial-gradient(circle, transparent 20%, #e2e5e8 20%, #e2e5e8 80%, transparent 80%, transparent) 50px 50px,
+linear-gradient(#d4d8dd 8px, transparent 8px) 0 -4px,
+linear-gradient(90deg, #d4d8dd 8px, transparent 8px) -4px 0;
+background-color: #e2e5e8;
+background-size:100px 100px, 100px 100px, 50px 50px, 50px 50px;
+  }
+  @media(max-width: 1050px) {
+  }
+  .intro {
+    max-width: 60%;
+    margin: 20% auto;
+    text-align: center;
+  }
+  nav {  }
+  ul {
+    display: inline-block;
+    width: 80%;
+    text-align: right;
+    background-color: goldenrod;
+  }
+  li {
+    display: inline-block;
+    padding: 20px;
+    letter-spacing: 1.5px;
+  }
+  li:hover { background-color: lightgoldenrodyellow; }
+  h2 {
+    padding: 30px;
+    font-size: 30px;
+  }
+  h5 {
+    margin-top: 20px;
+  }
+  .btn {
+    padding: 8px 15px;
+    border-radius: 20px;
+    background-color: goldenrod;
+  }
+  .textHolder {
+    width: 50%;
+    padding: 20px 25px;
+  }
+  #aktuelno { }
+  .container{
+  max-width:1200px;
+  margin:auto;
+  text-align:center;
+}
+.container2{
+  text-align:center;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.half {
+  width: 50%;
+}
+.txtHld {
+  padding-left: 7%;
+  font-size: 22px;
+}
+.hdln {
+  color: #555;
+  text-align: center;
+  padding-top: 15px;
+}
+.schedule {
+  margin: 50px 40px;
+  padding: 15px;
+  width: 320px;
+  background-color: #7C0A02;
+  color: #fff;
+}
+.schedule hr {
+  margin-bottom: 10px;
+}
+.blog {
+  margin: 50px 40px;
+  padding: 15px;
+  width: 320px;
+  background-color: skyblue;
+}
+.blog hr {
+  margin-bottom: 10px;
+}
+.blog h3, .schedule h3 {
+  font-size: 24px;
+}
+.activity {
+  font-size: 20px;
+}
+.smallCard {
+    width: 320px;
+    height: 90px;
+    margin-bottom: 1rem;
+    display: flex;
+}
+.smallCard img {
+  display: inline-block;
+    height: 100%;
+    width: 70px;
+    object-fit: cover;
+}
+.smallCard .cardTxt {
+  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 7px;
+}
+.cardTxt h4 { 
+  font-size: 20px;
+  vertical-align: middle; 
+}
+#zivot {
+  display: grid;
+   class="trLit"
+}
+</style>
+<body>
+  <header class="fisrtScreen">
+    <h1 class="hdln"><img src="media/crkva.png" style="height: 33px;"> <span class="trLit">Crkva Svetih Prepodobnomučenika đakona Avakuma i igumana Pajsija</span></h1>
+    <nav>
+      <a href=""><img style="height: 60px; width: 15%; padding-top: 20px; vertical-align: bottom;" src="media/logo.svg"></a>
+      <ul>
+        <li><a href="" class="trLit">Početna</a></li>
+        <li><a href="" class="trLit">Aktuelno</a></li>
+        <li><a href="" class="trLit">Iz života i rada</a></li>
+        <li><a href="" class="trLit">O nama</a></li>
+      </ul>
+    </nav>
+    <div class="row flex">
+      <div class="schedule">
+        <h3 class="trLit">Aktivnosti</h3>
+        <div>
+          <hr>
+          <p class="trLit">utorak, 18.januar 2022. od 8:00</p>
+          <p class="activity trLit">Krstovdanska liturgija sa velikim osvećenjem vode</p>
+        </div>
+        <div>
+          <hr>
+          <p class="trLit">utorak, 18.januar 2022. od 17:00</p>
+          <p class="activity trLit">Bdenije uoči Bogojavljanja</p>
+        </div>
+        <div>
+          <hr>
+          <p class="trLit">sreda, 19.januar 2022. od 9:00</p>
+          <p class="activity trLit">Bogojavljenje: Liturgija sa velikim osvećenjem vode</p>
+        </div>
+        <div>
+          <hr>
+          <p class="trLit">sreda, 19.januar 2022. od 17:00</p>
+          <p class="activity trLit">Bdenije uoči praznika Sv. Jovana</p>
+        </div>
+        <div>
+          <hr>
+          <p>četvrtak, 20.januar 2022. od 9:00</p>
+          <p class="activity trLit">Liturgija na praznik Sv. Jovana Krstitelja</p>
+        </div>
+      </div>
+      <div class="" style="width:650px;">
+        <img src="media/pajsije-i-avakum.jpg">
+      </div>
+      <div class="blog">
+        <h3 class="trLit">Naše pisanije:</h3>
+        <div>
+          <hr>
+          <a href="">
+            <div class="smallCard">
+              <img src="media/sveta-trojica-ikona.jpg">
+              <div class="cardTxt">
+                <h4 class="trLit">Filozofija shvatanja prirode Svete Trojice</h4>
+                <p>11.01.2022.</p>
+              </div>
+            </div>
+          </a>
+          <hr>
+          <a href="">
+            <div class="smallCard">
+              <img src="media/isus-hrist-ikona.jpg">
+              <div class="cardTxt">
+                <h4 class="trLit">Hrišćanski optimizam kao vodič kroz život</h4>
+                <p>15.01.2022.</p>
+              </div>
+            </div>
+          </a>
+          <hr>
+          <a href="">
+            <div class="smallCard">
+              <img src="media/prica-o-jovu.jpg">
+              <div class="cardTxt">
+                <h4 class="trLit">Priča o Jovu, kanonsko tumačenje</h4>
+                <p>24.01.2022.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+      <section id="aktuelno"  style="background-image: url('media/pergament.jpg'); border-top: 3px solid #000; padding-bottom: 30px;">
+        <div class="row">
+          <div class="half">
+            <div class="txtHld">
+              <h2 class="trLit">Nedeljna mudrost</h2>
+              <div>
+                <span>
+                  <img src="media/navodnici2.png" style="height:55px; float: left;padding-right: 10px;"> 
+                </span>
+                <p style="display: inline;" class="trLit"> Činili smo bezakonja - prestanimo, i Bog će oprostiti. Najveći previd činimo u vezi sa čedomorstvom, jer nećemo da priznamo da je to greh ubistva deteta, motivisan sebičnošću nedostojnih roditelja. To je najgnusnije ubistvo, odbijanje blagoslova Božjeg i uskraćivanje prava na život novoj ličnosti. Još nerođeno dete nije bezimeni zametak, fetus; to je čovek – duša živa. Molimo vas, roditelji, ne činite to više, ne zatvarajte vrata svojih srca i domova za blagoslov života. Ima mesta za sve i biće hleba za sve. Setite se onih bezdetnih roditelja koji suznih očiju mole Boga da im podari taj blagoslov! Neka vam materijalne nedaće ne budu izgovor za čedomorstvo! Ne uskraćujte sebi Božji blagoslov!</p>
+                <p class="trLit">Svako od nas treba da u ličnosti drugoga čoveka vidi lice Božje, lice svoga brata i večnog sabrata. Tada će srce svakoga od nas istinski biti vitlejemska pećina u kojoj se Hristos uvek iznova rađa. I što više bude takvih srdaca, svima će biti bolje i svi ćemo biti bolji.</p>
+              <p class="trLit" style="text-align: right; padding-top: 15px; font-size: 16px; color: #222;">- iz Božićne poslanice patrijarha Pavla, 2006</p>
+              </div>
+            </div>
+          </div>
+          <div class="half" style="text-align: center;">
+            <div style="position: relative; height: 100%;margin-top: 25px; margin-left:60px;">
+              <img src="media/image-frame.png" style="position: absolute; top: 0; left: 0; width: 460px;">
+              <img src="media/isus-hrist-beseda-na-gori.jpg" style="height: 444px; width: 350px; object-fit: cover; margin-top: 55px; margin-left: 55px; position: absolute; top: 0; left: 0;">
+            </div>
+          </div>
+        </div>
+    </section>
+    <section id="zivot">
+      
+    </section>
+<script type="text/javascript" src="js/translit4.js"></script>
+</body>
+</html>
