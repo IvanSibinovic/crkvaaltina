@@ -19,17 +19,20 @@
     text-decoration: none;
     color: #000;
   }
+  .patternbkg {
+    background:
+    radial-gradient(circle, transparent 20%, #e2e5e8 20%, #e2e5e8 80%, transparent 80%, transparent),
+    radial-gradient(circle, transparent 20%, #e2e5e8 20%, #e2e5e8 80%, transparent 80%, transparent) 50px 50px,
+    linear-gradient(#d4d8dd 8px, transparent 8px) 0 -4px,
+    linear-gradient(90deg, #d4d8dd 8px, transparent 8px) -4px 0;
+    background-color: #e2e5e8;
+    background-size:100px 100px, 100px 100px, 50px 50px, 50px 50px;
+  }
   .fisrtScreen {
     width: 100%;
-    background:
-radial-gradient(circle, transparent 20%, #e2e5e8 20%, #e2e5e8 80%, transparent 80%, transparent),
-radial-gradient(circle, transparent 20%, #e2e5e8 20%, #e2e5e8 80%, transparent 80%, transparent) 50px 50px,
-linear-gradient(#d4d8dd 8px, transparent 8px) 0 -4px,
-linear-gradient(90deg, #d4d8dd 8px, transparent 8px) -4px 0;
-background-color: #e2e5e8;
-background-size:100px 100px, 100px 100px, 50px 50px, 50px 50px;
   }
-  @media(max-width: 1050px) {
+  .imageHolder {
+    width: 650px;
   }
   .intro {
     max-width: 60%;
@@ -51,7 +54,7 @@ background-size:100px 100px, 100px 100px, 50px 50px, 50px 50px;
   li:hover { background-color: lightgoldenrodyellow; }
   h2 {
     padding: 30px;
-    font-size: 30px;
+    font-size: 40px;
   }
   h5 {
     margin-top: 20px;
@@ -65,8 +68,15 @@ background-size:100px 100px, 100px 100px, 50px 50px, 50px 50px;
     width: 50%;
     padding: 20px 25px;
   }
-  #aktuelno { }
-  .container{
+
+  #aktuelno { 
+  min-height: 100vh;
+  background-image: url('media/pergament.jpg');
+  border-top: 3px solid #000;
+  border-bottom: 3px solid #000;
+  padding-bottom: 30px;
+}
+  .container {
   max-width:1200px;
   margin:auto;
   text-align:center;
@@ -81,8 +91,25 @@ background-size:100px 100px, 100px 100px, 50px 50px, 50px 50px;
 }
 .half {
   width: 50%;
+} /*
+.frm {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 460px;
 }
+.pic {
+  height: 444px;
+  width: 350px;
+  object-fit: cover;
+  margin-top: 55px;
+  margin-left: 55px;
+  position: absolute;
+  top: 0;
+  left: 0;
+} */
 .txtHld {
+  padding-top: 23px;
   padding-left: 7%;
   font-size: 22px;
 }
@@ -139,13 +166,99 @@ background-size:100px 100px, 100px 100px, 50px 50px, 50px 50px;
   font-size: 20px;
   vertical-align: middle; 
 }
-#zivot {
+.grid-container {
   display: grid;
-   class="trLit"
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  grid-template-rows: 250px 250px 250px;
+  background-color: #2196F3;
 }
+
+.grid-container > .grid-item {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  font-size: 30px;
+  cursor: pointer;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('http://media4.popsugar-assets.com/files/2014/08/08/878/n/1922507/caef16ec354ca23b_thumb_temp_cover_file32304521407524949.xxxlarge/i/Funny-Cat-GIFs.jpg');
+  background-size: 100%;
+  transition: all 5s ease-in-out;
+}
+.grid-container > .grid-item:hover {
+  background-size: 140%;
+}
+.item1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.titleHolder {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 30px;
+}
+.titleHolder h5 {
+  color: #000;
+  margin-top: 7px;
+  font-size: 30px;
+}
+.titleHolder p {
+  color: #000;
+  margin-top: 10px;
+  font-size: 20px;
+}
+.ecliptor {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #777;
+  opacity: 0.5;
+  transition: all 0.7s ease-in-out;
+}
+.grid-item:first-of-type:hover > .ecliptor {
+  height: 20%;
+  background-color: #999;
+  opacity: 0.7;
+}
+.grid-item:hover > .ecliptor {
+  height: 50%;
+  background-color: #999;
+  opacity: 0.7;
+}
+.mainTitle {
+  display: inline-block;
+}
+.textCenter {
+  text-align: center;
+}
+
+    .imageHolder img{
+     width: 100%;
+    }
+  @media(max-width: 1050px) {
+    .half {
+      width: 100%;
+    }
+  }
+  @media(max-width: 768px) {
+.picwithfrm {
+  height: 65vh;
+}
+  }
+  @media(max-width: 560px) {
+.txtHld {padding: 25px 15px 25px 25px;
+  font-size: 22px;
+}
+  }
 </style>
 <body>
-  <header class="fisrtScreen">
+  <header class="fisrtScreen patternbkg">
     <h1 class="hdln"><img src="media/crkva.png" style="height: 33px;"> <span class="trLit">Crkva Svetih Prepodobnomučenika đakona Avakuma i igumana Pajsija</span></h1>
     <nav>
       <a href=""><img style="height: 60px; width: 15%; padding-top: 20px; vertical-align: bottom;" src="media/logo.svg"></a>
@@ -181,11 +294,11 @@ background-size:100px 100px, 100px 100px, 50px 50px, 50px 50px;
         </div>
         <div>
           <hr>
-          <p>četvrtak, 20.januar 2022. od 9:00</p>
+          <p class="trLit">četvrtak, 20.januar 2022. od 9:00</p>
           <p class="activity trLit">Liturgija na praznik Sv. Jovana Krstitelja</p>
         </div>
       </div>
-      <div class="" style="width:650px;">
+      <div class="imageHolder">
         <img src="media/pajsije-i-avakum.jpg">
       </div>
       <div class="blog">
@@ -225,11 +338,12 @@ background-size:100px 100px, 100px 100px, 50px 50px, 50px 50px;
       </div>
     </div>
   </header>
-      <section id="aktuelno"  style="background-image: url('media/pergament.jpg'); border-top: 3px solid #000; padding-bottom: 30px;">
+      <section id="aktuelno">
         <div class="row">
           <div class="half">
             <div class="txtHld">
-              <h2 class="trLit">Nedeljna mudrost</h2>
+              <img src="media/andjeo2.png" style="height: 70px; vertical-align: middle;">
+              <h2 class="trLit mainTitle">Nedeljna mudrost </h2>
               <div>
                 <span>
                   <img src="media/navodnici2.png" style="height:55px; float: left;padding-right: 10px;"> 
@@ -240,17 +354,192 @@ background-size:100px 100px, 100px 100px, 50px 50px, 50px 50px;
               </div>
             </div>
           </div>
+
+          <style type="text/css">
+
+.picwithfrm {
+  position: relative;
+  height: 100vh;
+}
+            .frm, .pic {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+            .pic {
+              width: 50%;
+              height: 60%;
+            }
+            .frm {
+              width: 66%;
+              height: 74%;
+            }
+          </style>
+
           <div class="half" style="text-align: center;">
-            <div style="position: relative; height: 100%;margin-top: 25px; margin-left:60px;">
-              <img src="media/image-frame.png" style="position: absolute; top: 0; left: 0; width: 460px;">
-              <img src="media/isus-hrist-beseda-na-gori.jpg" style="height: 444px; width: 350px; object-fit: cover; margin-top: 55px; margin-left: 55px; position: absolute; top: 0; left: 0;">
+            <div class="picwithfrm">
+              <img src="media/image-frame.png" class="frm">
+              <img src="media/isus-hrist-beseda-na-gori.jpg" class="pic">
             </div>
           </div>
         </div>
     </section>
     <section id="zivot">
-      
+      <div class="textCenter patternbkg">
+        <img src="media/andjeo.png" style="height: 60px; vertical-align: middle;">
+        <h2 class="trLit mainTitle"> Iz života i rada </h2>
+        <img src="media/andjeo-desni.png" style="height: 60px; vertical-align: middle;">
+      </div>
+      <div class="grid-container">
+      <div class="grid-item item1" style="background-image: url('media/crkva-altina-lazareva-subota-2021.jpg');">
+        <div class="ecliptor"></div>
+        <div class="titleHolder">
+          <a href="">
+            <p class="trLit">Subota, 24. april 2021.</p>
+            <h5 class="trLit">Lazareva subota u našem hramu na Altini</h5>
+          </a>
+        </div>
+      </div>
+      <div class="grid-item item2" style="background-image: url('media/spasovdanska-litija-2021.jpg');">
+        <div class="ecliptor"></div>
+        <div class="titleHolder">
+          <a href="">
+            <p class="trLit">Petak, 11. jun 2021.</p>
+            <h5 class="trLit">Spasovdanska litija u Beogradu</h5>
+          </a>
+        </div>
+      </div>
+      <div class="grid-item item3" style="background-image: url('media/poslednja-vecera.jpg');">
+        <div class="ecliptor"></div>
+        <div class="titleHolder">
+          <a href="">
+            <p class="trLit">Nedelja, 13. jun 2021.</p>
+            <h5 class="trLit">Tribina o suštini tajne večere</h5>
+          </a>
+        </div>
+      </div>  
+      <div class="grid-item item4" style="background-image: url('media/prica-o-jovu.jpg');">
+        <div class="ecliptor"></div>
+        <div class="titleHolder">
+          <a href="">
+            <p class="trLit">Ponedeljak, 30. avgust 2021.</p>
+            <h5 class="trLit">Otvoreno predavanje o biblijskim pričama</h5>
+          </a>
+        </div>
+      </div>
+      <div class="grid-item item5" style="background-image: url('media/skuti-crkva-altina.jpg');">
+        <div class="ecliptor"></div>
+        <div class="titleHolder">
+          <a href="">
+            <p class="trLit">Nedelja, 27. Jun 2021.</p>
+            <h5 class="trLit">Skuti ponovo nastupili ispred našeg hrama</h5>
+          </a>
+        </div>
+      </div>
+      <div class="grid-item item6" style="background-image: url('media/litija-novi-beograd-zemun.jpg');">
+        <div class="ecliptor"></div>
+        <div class="titleHolder">
+          <a href="">
+            <p class="trLit">Nedelja, 6. oktobar 2021.</p>
+            <h5 class="trLit">Litija u znak podrške našoj crkvi u Crnoj Gori</h5>
+          </a>
+        </div>
+      </div>
+    </div>
     </section>
+
+
+      <div class="mapouter">
+        <div class="gmap_canvas">
+          <iframe width="100%" height="400px" id="gmap_canvas" src="https://maps.google.com/maps?q=%D0%9F%D1%80%D0%B0%D0%B2%D0%BE%D1%81%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%20%D1%86%D1%80%D0%BA%D0%B2%D0%B0%20%D0%A1%D0%B2.%20%D0%90%D0%B2%D0%B0%D0%BA%D1%83%D0%BC%D0%B0%20%D0%B8%20%D0%9F%D0%B0%D1%98%D1%81%D0%B8%D1%98%D0%B0&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+          <a href="https://www.embedgooglemap.net"></a>
+        </div>
+      </div>
+
+    <section id="kontakt" class="patternbkg">
+        <div class="row img-bg">
+          <div class="col">
+            <div class="txt-holder">
+              <img src="media/andjeo-truba.png" style="height: 70px; vertical-align: middle;">
+              <h2 class="trLit mainTitle"> Kontakt </h2>
+              <hr>
+              <h5>Adresa:</h5>
+              <p>Ugrinovački put 16M, 11080 Zemun</p>
+              <h5>Telefon:</h5>
+              <p class="lead">+381 63 88 31 667</p>
+              <p class="lead">+381 60 05 333 52</p>
+              <h5 class="lead">E-Mail:</h5>
+              <p>kontakt@linkmarketing.rs</p>
+            </div>
+          </div>
+          <div>
+            <img src="media/">
+          </div>
+          <div class="col">
+            <form class="txt-holder input-form" action="contact_me.php" method="POST">
+              <h4 class="pt-175">Pišite na naš E-Mail</h4>
+              <input class="input" type="text" id="name" name="name" required placeholder="Ime i prezime">
+              <input class="input" type="email" id="email" name="email" required placeholder="Vaš E-Mail">
+              <input class="input" type="text" id="phone" name="phone" placeholder="Vaš telefon">
+              <textarea class="input" id="message" name="message" required placeholder="Pitajte sve što Vas zanima..." style="height:200px"></textarea>
+              <button type="submit" name="submit" class="my-button">Pošalji <i class="fas fa-paper-plane"></i></button>
+              <p class="under-button">Odgovorićemo u najkraćem mogućem roku</p>
+            </div>
+          </form>
+        </div>
+    </section>
+
 <script type="text/javascript" src="js/translit4.js"></script>
+
+<style>
+  .mapouter {
+    position:relative;
+    text-align:right;
+    height:400px;
+    width:100%;
+  }
+  .gmap_canvas {
+  overflow:hidden;
+  background:none!important;
+  height:400px;
+  width:100%;
+  }
+
+#kontakt {
+  border-top: 2px solid #111;
+}
+
+#kontakt .txt-holder p,h5 {
+  text-align: center;
+}
+
+.input-form {
+  padding: 2rem 4rem;
+  text-align: center;
+}
+
+.input {
+  display: block;
+  margin-bottom: 1rem;
+  padding: 5px;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.my-button {
+  border: 2px solid #ddd;
+  border-radius: 2px;
+  background-color: #333;
+  color: #ddd;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.under-button {
+  font-size: 16px;
+}
+</style>
 </body>
 </html>
