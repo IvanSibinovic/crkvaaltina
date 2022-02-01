@@ -585,7 +585,7 @@ Main Components
   .cd-schedule .event-modal .close {
     width: 40px;
     height: 40px;
-    background: transparent;
+    background: #fff;
   }
   .cd-schedule .event-modal .close::after, .cd-schedule .event-modal .close::before {
     background: #222222;
