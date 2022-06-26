@@ -680,10 +680,10 @@
         <li class="liNav liLink"><a href="raspored.html" class="trLit">Raspored</a></li>
         <li class="liNav liLink"><a href="galerija-slika.html" class="trLit">Iz života i rada</a></li>
         <li class="liNav liLink"><a href="index.html#about" class="trLit">O nama</a></li>
-        <li class="liNav liFont">
-          <span><a href="article.html">ћир</a></span>
-          <span><a href="article.html" style="font-family: 'Montserrat';">lat</a></span>
-        </li>
+ <!--       <li class="liNav liFont">
+          <span class="cyrilic">ћир</span>
+          <span class="latin" style="font-family: 'Montserrat';">lat</span>
+        </li> -->
       </ul>
       <span class="toggle menu">
         <img src="media/isus-nika.png">
@@ -886,7 +886,7 @@
           </div>
         </div>
     </section>
-    <section id="elders">
+    <section id="staresine">
         <div class="angHdl">
           <img src="media/crkva.png" style="vertical-align: baseline; padding-left: 30px;">
           <h2 class="trLit mainTitle"> Sveštenstvo i osoblje hrama</h2>
@@ -916,14 +916,21 @@
             <p><a href="tel:+38163583421" style="font-family: Montserrat; font-size: 15px; padding: 10px 5px;">+38163583421</a></p>
           </div>
         </div>
-
+<style type="text/css">
+  .textOverflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+  }
+</style>
       </div>
         <div class="textHolder">
           <p class="trLit">Područje Altine je podeljeno na dve parohije.</p>
           <br>
-          <p class="trLit">Parohija 1: Krajiška, Vojni put 1. deo, Vojni put 2. deo, Dobanovački put, Ratarski put, deo ulice Ugrinovački put do ulice Ugrinovački put 6. deo i Juga Grizelja, Ugrinovački put 2. deo, Dragiše Vasića, Hemingvejeva, Abebe Bikile, Servantesova, Juga Grizelja (neparna, leva strana), Joza Laurenčića (neparna, leva strana), Džesija Ovensa, Slobodana Glumca, Radenka Miševića, Zire Adamović do ulice Juga Grizelja, Zuke Džumhura, Miroslava Antića, Aleksandra Popovića, Musorskog, Oskara Daviča, Pavla Vujisića do ulice Episkopa Nikolaja i Ljiljane Krstić.</p>
+          <p class="trLit textOverflow">Parohija 1: Krajiška, Vojni put 1. deo, Vojni put 2. deo, Dobanovački put, Ratarski put, deo ulice Ugrinovački put do ulice Ugrinovački put 6. deo i Juga Grizelja, Ugrinovački put 2. deo, Dragiše Vasića, Hemingvejeva, Abebe Bikile, Servantesova, Juga Grizelja (neparna, leva strana), Joza Laurenčića (neparna, leva strana), Džesija Ovensa, Slobodana Glumca, Radenka Miševića, Zire Adamović do ulice Juga Grizelja, Zuke Džumhura, Miroslava Antića, Aleksandra Popovića, Musorskog, Oskara Daviča, Pavla Vujisića do ulice Episkopa Nikolaja i Ljiljane Krstić.</p>
           <br>
-          <p class="trLit">Parohija 2: Ugrinovački put 6. deo, Juga Grizelja (parna, desna strana), Jasmine Jovanović, Zire Adamović do ulice Juga Grizelja, Taška Načića, Slobodana Đurića, Simeona Končarevića, deo ulice Ugrinovački put od ulice Ugrinovački put 6. deo i Juga Grizelja do Male pruge, Justina Popovića, Pavla Vujisića so ulice Episkopa Nikolaja, Borhesova, Akira Kurosave, Kortesarova, Aleksandra Petrovića, Konstantina Kavafija, Grigorija Božovića, Amadova, Emila Zlatopeka, Mije Aleksića, Episkopa Sergeja, Simona Bolivara, Dijega Rivere, Svetomira Đukića, Ugrinovački put 18, 27, 34, 66 i 99.deo.</p>
+          <p class="trLit textOverflow">Parohija 2: Ugrinovački put 6. deo, Juga Grizelja (parna, desna strana), Jasmine Jovanović, Zire Adamović do ulice Juga Grizelja, Taška Načića, Slobodana Đurića, Simeona Končarevića, deo ulice Ugrinovački put od ulice Ugrinovački put 6. deo i Juga Grizelja do Male pruge, Justina Popovića, Pavla Vujisića so ulice Episkopa Nikolaja, Borhesova, Akira Kurosave, Kortesarova, Aleksandra Petrovića, Konstantina Kavafija, Grigorija Božovića, Amadova, Emila Zlatopeka, Mije Aleksića, Episkopa Sergeja, Simona Bolivara, Dijega Rivere, Svetomira Đukića, Ugrinovački put 18, 27, 34, 66 i 99.deo.</p>
         </div>
     </section>
 
@@ -992,6 +999,14 @@ $(".menu, .overlaid, .tags").click(function(){
     return null;
   }
 });
+
+  let zaProsirenje = document.querySelectorAll('.textOverflow');
+  for (var i = zaProsirenje.length - 1; i >= 0; i--) {
+    zaProsirenje[i].addEventListener('click', function(){
+    this.classList.toggle("textOverflow");
+  })
+  }
+
 </script>
 </body>
 </html>
