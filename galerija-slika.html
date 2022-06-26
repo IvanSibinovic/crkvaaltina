@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/fonts.css" type="text/css"/>
+  <link rel="stylesheet" href="css/lightbox.css" type="text/css"/>
+  <title>Galerija slika - Crkva Altina</title>
+</head>
+<style type="text/css">
+
+  *{
+    margin: 0; padding: 0;
+    font-family: 'Ponomar Unicode';
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    overflow-x:hidden;
+  }
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+  .patternbkg {
+    background:
+    radial-gradient(circle, transparent 20%, #e2e5e8 20%, #e2e5e8 80%, transparent 80%, transparent),
+    radial-gradient(circle, transparent 20%, #e2e5e8 20%, #e2e5e8 80%, transparent 80%, transparent) 50px 50px,
+    linear-gradient(#d4d8dd 8px, transparent 8px) 0 -4px,
+    linear-gradient(90deg, #d4d8dd 8px, transparent 8px) -4px 0;
+    background-color: #e2e5e8;
+    background-size:100px 100px, 100px 100px, 50px 50px, 50px 50px;
+  }
+  .fisrtScreen {
+    width: 100%;
+  }
+  .imageHolder {
+    width: 650px;
+  }
+  .intro {
+    max-width: 60%;
+    margin: 20% auto;
+    text-align: center;
+  }
+  nav {  }
+  ul {
+    display: inline-block;
+    width: 80%;
+    line-height: 1;
+    text-align: right;
+    background-color: #e5c100;
+  }
+  li {
+    display: inline-block;
+    padding: 20px;
+    letter-spacing: 1.5px;
+    font-size: 22px;
+  }
+  .liLink:hover {
+    background-color: palegoldenrod;
+  }
+  h2 {
+    padding: 30px;
+    font-size: 40px;
+  }
+  h5 {
+    margin-top: 20px;
+  }
+  .btn {
+    padding: 8px 15px;
+    border-radius: 20px;
+    background-color: #e5c100;
+  }
+  .textHolder {
+    width: 50%;
+    padding: 20px 25px;
+  }
+
+  #aktuelno { 
+  min-height: 100vh;
+  background-image: url('media/pergament.jpg');
+  border-top: 3px solid #000;
+  border-bottom: 3px solid #000;
+  padding-bottom: 30px;
+}
+  .container {
+  max-width:1200px;
+  margin:auto;
+  text-align:center;
+}
+.container2{
+  text-align:center;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.half {
+  width: 50%;
+}
+.picwithfrm {
+  position: relative;
+  height: 100vh;
+}
+.frm, .pic {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.pic {
+  width: 50%;
+  height: 60%;
+}
+.frm {
+  width: 66%;
+  height: 74%;
+}
+.txtHld {
+  padding-top: 23px;
+  padding-left: 7%;
+  font-size: 22px;
+}
+.hdln {
+  color: #555;
+  text-align: center;
+  padding-top: 15px;
+  font-size: 45px;
+}
+.hdln img {
+  height: 45px;
+}
+.schedule {
+  margin: 50px 40px;
+  padding: 15px;
+  width: 320px;
+  background-color: #7C0A02;
+  font-family: 'Montserrat';
+  color: #fff;
+}
+.dateTime {
+  font-family: 'Montserrat';
+}
+.schedule hr {
+  margin-bottom: 10px;
+}
+.blog {
+  margin: 50px 40px;
+  padding: 15px;
+  width: 320px;
+  background-color: skyblue;
+}
+.blog hr {
+  margin-bottom: 10px;
+}
+.blog h3, .schedule h3 {
+  font-family: 'Montserrat';
+  font-size: 24px;
+}
+.activity {
+  line-height: 1.3;
+  font-family: 'Montserrat';
+  font-size: 20px;
+}
+.smallCard {
+    width: 320px;
+    height: 90px;
+    margin-bottom: 1rem;
+    display: flex;
+}
+.smallCard img {
+  display: inline-block;
+    height: 100px;
+    width: 70px;
+    object-fit: cover;
+}
+.smallCard .cardTxt {
+  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 7px;
+}
+.cardTxt h4 { 
+  font-size: 20px;
+  vertical-align: middle; 
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 250px 250px 250px;
+  background-color: #2196F3;
+}
+
+.grid-container > .grid-item {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  font-size: 30px;
+  cursor: pointer;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  transition: all 5s ease-in-out;
+}
+.grid-container > .grid-item:hover {
+  background-size: 140%;
+}
+.item1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.titleHolder {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 30px;
+}
+.titleHolder h5 {
+  color: #000;
+  margin-top: 7px;
+  font-size: 30px;
+  padding-bottom: 5px;
+}
+.titleHolder p {
+  color: #000;
+  margin-top: 10px;
+  font-size: 20px;
+  font-family: 'Montserrat';
+}
+.ecliptor {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #777;
+  opacity: 0.5;
+  transition: all 0.7s ease-in-out;
+}
+.grid-item:first-of-type:hover > .ecliptor {
+  height: 20%;
+  background-color: #bfbfbf;
+  opacity: 0.8;
+}
+.grid-item:hover > .ecliptor {
+  height: 50%;
+  background-color: #bfbfbf;
+  opacity: 0.8;
+}
+.mainTitle {
+  display: inline-block;
+}
+.textCenter {
+  text-align: center;
+}
+.imageHolder img{
+  width: 100%;
+}
+.angHdl img {
+  height: 60px;
+  vertical-align: middle;
+}
+.logo {
+  padding: 0 40px;
+}
+.logo img {
+  height: 80px;
+  width: 60px;
+  padding-top: 20px;
+  vertical-align: bottom;
+}
+.toggle img {
+  display: none;
+}
+#kontakt .txt-holder img {
+  height: 70px;
+  vertical-align: middle;
+}
+.overlaid {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0; 
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.75); /* Black background with opacity */
+  z-index: 50; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+.overlay-appear {
+  display: block;
+}
+
+.liFont  {
+  vertical-align: bottom;
+  height: 62px;
+  width: 100px;
+  padding: 0;
+}
+.liFont span {
+  text-align: center;
+  height:28px;
+  display: block;
+  padding: 2px;
+  line-height: 1.5;
+  font-size: 18px;
+  cursor: pointer;
+}
+.liFont span:hover {
+  background-color: palegoldenrod;
+}
+
+
+.pt-175 {
+  padding-top: 30px;
+}
+.px20 {
+  padding: 10px 40px;
+}
+.half23 {
+  display: inline-block;
+  width: 65%;
+}
+.half23 p {
+  padding: 10px 15px;
+  font-size: 18px;
+}
+.half13 h3 {
+  font-size: 24px;
+}
+.half23 img {
+  width: 100%;
+  border-radius: 4px;
+}
+.half13 {
+  width: 32%;
+  display: inline-block;
+}
+.blogCard1 {
+  margin-bottom: 15px;
+  padding: 15px;
+  width: 320px;
+  background-color: skyblue;
+}
+.blogCard2 {
+  margin-bottom: 15px;
+  padding: 15px;
+  width: 320px;
+  background-color: #e5c100;
+}
+.px20 span::nth-of-type(2)  {
+  float: right;
+}
+/* za prilagodljivi prikaz */
+@media(max-width: 1050px) {
+  .half {
+    width: 100%;
+  }
+  .half23, .half13 {
+    width: 100%;
+    display: block;
+  }
+  .blogCard1, .blogCard2 {
+    margin: 15px auto;
+  }
+  nav {
+  position: absolute;
+  top: 50%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: 50px;
+  width: 100%;
+  z-index: 1500;
+  position: fixed;
+  transition: all 600ms ease-in-out;
+}
+  .toggle img {
+  display: inline;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  height: 60px;
+  width: 60px;
+  padding: 7px;
+  background-color: #fff;
+  border-radius: 50px;
+  border: 2px solid #333;
+  transition: all 600ms ease-in-out;
+  z-index: 99;
+  }
+ul {
+  position: absolute;
+    right: 0;
+    background: #333;
+    padding: 0;
+    width: 65%;
+    transform-origin: right;
+    transform: translateX(100%);
+    transition: 0.5s;
+  }
+  ul li {
+    display: block;
+    text-align: center;
+    border: 1px solid #fff;
+    z-index: 25;
+  } 
+  ul li a {
+    display: block;
+    color: #fff;
+    z-index: 30;
+  }
+  .active1 {
+    transform: translateX(0%);
+  }
+  .active2 {
+    transform: translateX(-200px);
+  }
+  .liFont  {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+.liFont span {
+  height:100%;
+  display: inline-block;
+  width: 92px;
+}
+  .logo {
+    display: none;
+  }
+}
+@media(max-width: 768px) {
+  .hdln {
+    font-size: 32px;
+  }
+
+  .mainTitle {
+    font-size: 32px;
+    padding: 20px 7px;
+    width: 60%;
+  }
+  .txtHld {
+    padding: 25px 15px 25px 25px;
+    font-size: 22px;
+  }
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 160px 160px 160px;
+  }
+  .grid-container > .grid-item {
+    font-size: 25px;
+  }
+  .item1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  .picwithfrm {
+    height: 65vh;
+  }
+  #kontakt .txt-holder img {
+  height: 50px;
+  }
+}
+
+  @media(max-width: 560px) {
+  .hdln {
+    font-size: 26px;
+  }.blog {
+    margin: 15px 10px;
+    padding: 10px;
+    width: 280px;
+}
+.smallCard {
+    width: 280px;
+    height: 100px;
+    margin-bottom: 1rem;
+    display: flex;
+}
+    .txtHld {
+      padding: 25px 15px 25px 25px;
+      font-size: 22px;
+    }
+    .picwithfrm {
+      height: 70vh;
+    }
+    .pic {
+      width: 65%;
+      height: 50%;
+    }
+    .frm {
+      width: 86%;
+      height: 65%;
+    }
+    .mainTitle {
+      width: 60%;
+      padding: 15px 5px;
+    }
+.grid-container {
+    grid-template-rows: 140px 140px 140px;
+}
+    .angHdl img {
+      height: 40px;
+      padding-bottom: 15px;
+    }
+    .ecliptor {
+  background-color: #bfbfbf;
+  opacity: 0.7;
+    }
+.titleHolder h5 {
+  color: #000;
+  margin-top: 7px;
+  font-size: 20px;
+  padding: 4px 5px 4px;
+}
+.titleHolder p {
+  color: #000;
+  margin-top: 6px;
+  font-size: 13px;
+  font-family: 'Montserrat';
+}
+
+.cardTxt h4 {
+  font-size: 18px;
+}
+.px20 {
+  padding: 10px 8px;
+  }
+.px20 span {
+  float: none;
+  display: block;
+}
+}
+.graybkg {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+.galleryPic {
+  margin: 10px;
+  height: 300px;
+  border-radius: 3px;
+}
+</style>
+<body class="patternbkg">
+  <div class="overlaid"></div>
+    <h1 class="hdln"><img src="media/crkva.png"> <span class="trLit">Crkva Svetih Prepodobnomučenika đakona Avakuma i igumana Pajsija</span></h1>
+    <nav>
+      <span href="" class="logo"><img src="media/logo.svg"></span>
+      <ul>
+        <li class="liLink"><a href="" class="trLit">Početna</a></li>
+        <li class="liLink"><a href="" class="trLit">Aktuelno</a></li>
+        <li class="liLink"><a href="" class="trLit">Iz života i rada</a></li>
+        <li class="liLink"><a href="" class="trLit">O nama</a></li>
+        <li class="liFont">
+          <span><a href="">ћир</a></span>
+          <span><a href="" style="font-family: 'Montserrat'; font-weight: bold;">lat</a></span>
+        </li>
+      </ul>
+      <span href="" class="toggle menu"><img src="media/isus-nika.png"></span>
+    </nav>
+  <section class="article">
+    <h2 class="trLit">Galerija slika</h2>
+    <div class="container">
+      <div class="row">
+      <a href="media/galerija/crkva-altina.jpg" data-aos="fade-up" data-lightbox="crkva-altina">
+        <img class="galleryPic" src="media/galerija/crkva-altina.jpg">
+      </a>
+      <a href="media/galerija/crkva-altina-2.jpg" data-aos="fade-up" data-lightbox="crkva-altina">
+        <img class="galleryPic" src="media/galerija/crkva-altina-2.jpg">
+      </a>
+      <a href="media/galerija/crkva-altina-3.jpg" data-aos="fade-up" data-lightbox="crkva-altina">
+        <img class="galleryPic" src="media/galerija/crkva-altina-3.jpg">
+      </a>
+      <a href="media/galerija/crkva-altina-4.jpg" data-aos="fade-up" data-lightbox="crkva-altina">
+        <img class="galleryPic" src="media/galerija/crkva-altina-4.jpg">
+      </a>
+      <a href="media/galerija/crkva-altina-5.jpg" data-aos="fade-up" data-lightbox="crkva-altina">
+        <img class="galleryPic" src="media/galerija/crkva-altina-5.jpg">
+      </a>
+      <a href="media/galerija/crkva-altina-6.jpg" data-aos="fade-up" data-lightbox="crkva-altina">
+        <img class="galleryPic" src="media/galerija/crkva-altina-6.jpg">
+      </a>
+      <a href="media/galerija/crkva-altina-7.jpg" data-aos="fade-up" data-lightbox="crkva-altina">
+        <img class="galleryPic" src="media/galerija/crkva-altina-7.jpg">
+      </a>
+      <a href="media/galerija/crkva-altina-sluzba-10.04.2022..jpg" data-aos="fade-up" data-lightbox="crkva-altina">
+        <img class="galleryPic" src="media/galerija/crkva-altina-sluzba-10.04.2022..jpg">
+      </a>
+      <a href="media/galerija/crkva-altina-sluzba-10.04.2022.-2.jpg" data-aos="fade-up" data-lightbox="crkva-altina">
+        <img class="galleryPic" src="media/galerija/crkva-altina-sluzba-10.04.2022.-2.jpg">
+      </a>
+      <a href="media/galerija/crkva-altina-sluzba-10.04.2022.-3.jpg" data-aos="fade-up" data-lightbox="crkva-altina">
+        <img class="galleryPic" src="media/galerija/crkva-altina-sluzba-10.04.2022.-3.jpg">
+      </a>
+      <a href="media/galerija/crkva-altina-sluzba-13.02.2022.jpg" data-aos="fade-up" data-lightbox="crkva-altina">
+        <img class="galleryPic" src="media/galerija/crkva-altina-sluzba-13.02.2022.jpg">
+      </a>
+      <a href="media/galerija/crkva-altina-sluzba-13.02.2022-2.jpg" data-aos="fade-up" data-lightbox="crkva-altina">
+        <img class="galleryPic" src="media/galerija/crkva-altina-sluzba-13.02.2022-2.jpg">
+      </a>
+      <a href="media/galerija/crkva-altina-sluzba-13.02.2022-3.jpg" data-aos="fade-up" data-lightbox="crkva-altina">
+        <img class="galleryPic" src="media/galerija/crkva-altina-sluzba-13.02.2022-3.jpg">
+      </a>
+      <a href="media/galerija/crkva-altina-sluzba-13.02.2022-4.jpg" data-aos="fade-up" data-lightbox="crkva-altina">
+        <img class="galleryPic" src="media/galerija/crkva-altina-sluzba-13.02.2022-4.jpg">
+      </a>
+      <a href="media/galerija/crkva-altina-sluzba-17.04.2022..jpg" data-aos="fade-up" data-lightbox="crkva-altina">
+        <img class="galleryPic" src="media/galerija/crkva-altina-sluzba-17.04.2022..jpg">
+      </a>
+      <a href="media/galerija/crkva-altina-sluzba-17.04.2022.-2.jpg" data-aos="fade-up" data-lightbox="crkva-altina">
+        <img class="galleryPic" src="media/galerija/crkva-altina-sluzba-17.04.2022.-2.jpg">
+      </a>
+      <a href="media/galerija/crkva-altina-sluzba-17.04.2022.-3.jpg" data-aos="fade-up" data-lightbox="crkva-altina">
+        <img class="galleryPic" src="media/galerija/crkva-altina-sluzba-17.04.2022.-3.jpg">
+      </a>
+      <a href="media/galerija/crkva-altina-sluzba-17.04.2022.-4.jpg" data-aos="fade-up" data-lightbox="crkva-altina">
+        <img class="galleryPic" src="media/galerija/crkva-altina-sluzba-17.04.2022.-4.jpg">
+      </a>
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    <a style="padding-bottom: 15px;" href="">
+      <img src="media/back-arrow.png" style="height: 22px; vertical-align: bottom;"> 
+      <span onclick="history.back()">povratak na prethodnu stranu</span>
+    </a>
+  </div>
+<style type="text/css">
+</style>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/translit4.js"></script>
+<script type="text/javascript" src="js/lightbox.js"></script>
+<script type="text/javascript">
+  $('li.tags').on('click', function (e) {
+  window.location.href= $(this).children('a').attr("href");
+  return false;
+});
+
+$(".menu, .overlaid, .tags").click(function(){
+  if ($(window).width() < 1050) {
+    $('ul').toggleClass('active1');
+    $('.menu img').toggleClass('active2');
+    $('.overlaid').toggleClass('overlay-appear');
+    }
+  else {
+    return null;
+  }
+});
+</script>
+</body>
+</html>

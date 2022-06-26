@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/fonts.css" type="text/css"/>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
   <title>Crkva Altina</title>
 </head>
 <style type="text/css">
@@ -71,10 +72,6 @@
     border-radius: 20px;
     background-color: #e5c100;
   }
-  .textHolder {
-    width: 50%;
-    padding: 20px 25px;
-  }
 
   #aktuelno { 
   min-height: 100vh;
@@ -95,6 +92,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+.inlBlock {
+  display: inline-block;
 }
 .half {
   width: 50%;
@@ -191,6 +191,33 @@
   grid-template-rows: 250px 250px 250px;
   background-color: #2196F3;
 }
+.card {
+  position: relative;
+  width: 300px;
+  padding-top: 10px;
+  text-align: center;
+    font-size: 19px;
+}
+  .card .profilePic {
+    height: 280px;
+    border-radius: 50%;
+  }
+  .cardTxtHld {
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+  .sym {
+    height: 50px;
+    position: absolute;
+    left: 20px;
+    top: 40px;
+  }
+  .textHolder {
+    padding: 30px 25px;
+  }
+  .textHolder p{
+    font-family: 'Montserrat';
+  }
 
 .grid-container > .grid-item {
   position: relative;
@@ -391,8 +418,11 @@
   padding: 2rem 4rem;
   text-align: center;
 }
-
+.input-form h4{
+  font-family: 'Montserrat';
+}
 .input {
+  font-family: 'Montserrat';
   display: block;
   margin-bottom: 1rem;
   padding: 5px;
@@ -415,10 +445,35 @@
 
 .under-button {
   font-size: 16px; }
-  #about .txtHld p {
+  #about .txtHld p, #about .txtHld a {
     font-family: 'Montserrat';
     line-height: 1.5;
   }
+#patrijarh {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+#patrijarh .trLit {
+  font-size: 24px;
+}
+.framedimg {
+  position: relative;
+}
+.framedimg .framer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  trans/media/: translate(-50%, -50%);
+  height: 550px;
+}
+.framedimg .framedPicture {
+  max-width: 450px;
+  border-radius: 4px;
+  border: 10px solid #f7f7f7;
+}
 /* za prilagodljivi prikaz */
 @media(max-width: 1050px) {
   .half {
@@ -599,20 +654,31 @@
   float: none;
   display: block;
 }
+.framedimg .framedPicture {
+  max-width: 90%;
+  border-radius: 4px;
+  border: 10px solid #f7f7f7;
+}
 }
 .graybkg {
   background-color: rgba(255, 255, 255, 0.35);
 }
+.linkovi a img {
+  border-radius: 4px;
+}
+.linkovi a img:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
 </style>
 <body class="patternbkg">
   <div class="overlaid"></div>
-    <h1 class="hdln"><img src="media/crkva.png"> <span class="trLit">Crkva Svetih Prepodobnomučenika đakona Avakuma i igumana Pajsija</span></h1>
+  <a href=""><h1 class="hdln"><img src="media/crkva.png"> <span class="trLit">Crkva Svetih Prepodobnomučenika đakona Avakuma i igumana Pajsija</span></h1></a>
     <nav>
       <span href="article.html" class="logo"><img src="media/logo.svg"></span>
       <ul class="ulNav">
         <li class="liNav liLink"><a href="index.html" class="trLit">Početna</a></li>
-        <li class="liNav liLink"><a href="schedule.html" class="trLit">Raspored</a></li>
-        <li class="liNav liLink"><a href="article.html" class="trLit">Iz života i rada</a></li>
+        <li class="liNav liLink"><a href="raspored.html" class="trLit">Raspored</a></li>
+        <li class="liNav liLink"><a href="galerija-slika.html" class="trLit">Iz života i rada</a></li>
         <li class="liNav liLink"><a href="index.html#about" class="trLit">O nama</a></li>
         <li class="liNav liFont">
           <span><a href="article.html">ћир</a></span>
@@ -630,63 +696,63 @@
         <h3 class="trLit">Aktivnosti</h3>
         <div>
           <hr>
-          <p class="trLit dateTime">utorak, 18.januar 2022. od 8:00</p>
-          <p class="activity trLit">Krstovdanska liturgija sa velikim osvećenjem vode</p>
+          <p class="trLit dateTime">ponedeljak, 27.jun 2022. od 17:00</p>
+          <p class="activity trLit">Bdenije uoči Vidovdana</p>
         </div>
         <div>
           <hr>
-          <p class="trLit dateTime">utorak, 18.januar 2022. od 17:00</p>
-          <p class="activity trLit">Bdenije uoči Bogojavljanja</p>
+          <p class="trLit dateTime">utorak, 28.jun 2022. od 9:00</p>
+          <p class="activity trLit">Vidovdanska liturgija</p>
         </div>
         <div>
           <hr>
-          <p class="trLit dateTime">sreda, 19.januar 2022. od 9:00</p>
-          <p class="activity trLit">Bogojavljenje: Liturgija sa velikim osvećenjem vode</p>
+          <p class="trLit dateTime">četvrtak, 30.jun 2022. od 17:00</p>
+          <p class="activity trLit">Akatist Srbima Svetiteljima</p>
         </div>
         <div>
           <hr>
-          <p class="trLit dateTime">sreda, 19.januar 2022. od 17:00</p>
-          <p class="activity trLit">Bdenije uoči praznika Sv. Jovana</p>
+          <p class="trLit dateTime">subota, 2.jun 2022. od 8:00</p>
+          <p class="activity trLit">Liturgija</p>
         </div>
         <div>
           <hr>
-          <p class="trLit dateTime">četvrtak, 20.januar 2022. od 9:00</p>
-          <p class="activity trLit">Liturgija na praznik Sv. Jovana Krstitelja</p>
+          <p class="trLit dateTime">nedelja, 3.jun 2022. od 9:00</p>
+          <p class="activity trLit">Liturgija</p>
         </div>
       </div>
       <div class="imageHolder">
         <img src="media/pajsije-i-avakum.jpg">
       </div>
       <div class="blog">
-        <h3 class="trLit">Naše pisanije:</h3>
+        <h3 class="trLit">Duhovnost:</h3>
         <div>
           <hr>
-          <a href="article.html">
+          <a href="http://www.spc.rs/sr/vidovdan">
             <div class="smallCard">
-              <img src="media/sveta-trojica-ikona.jpg">
+              <img src="media/car-lazar.jpg">
               <div class="cardTxt">
-                <h4 class="trLit">Filozofija shvatanja prirode Svete Trojice</h4>
-                <p>11.01.2022.</p>
+                <h4 class="trLit">Vidovdan</h4>
+                <p class="trLit">Zar sloboda može postojati bez Svetog Duha?</p>
               </div>
             </div>
           </a>
           <hr>
-          <a href="article.html">
+          <a href="http://www.spc.rs/sr/tajna_praznika_duhovi_1">
             <div class="smallCard">
-              <img src="media/isus-hrist-ikona.jpg">
+              <img src="media/pedesetnica.jpg">
               <div class="cardTxt">
-                <h4 class="trLit">Hrišćanski optimizam kao vodič kroz život</h4>
-                <p>15.01.2022.</p>
+                <h4 class="trLit">Duhovi</h4>
+                <p class="trLit">Silazak Svetog Duha na Apostole</p>
               </div>
             </div>
           </a>
           <hr>
-          <a href="article.html">
+          <a href="https://www.tvhram.rs/emisije/4238/muzika-moje-pokajanje-shi-arhimandrit-serafim-bit-haribi">
             <div class="smallCard">
-              <img src="media/prica-o-jovu.jpg">
+              <img src="media/serafim-haribi-bit.jpg">
               <div class="cardTxt">
-                <h4 class="trLit">Priča o Jovu, kanonsko tumačenje</h4>
-                <p>24.01.2022.</p>
+                <h4 class="trLit">Shiarhimandrit Serafim</h4>
+                <p class="trLit">Muzika je moje pokajanje</p>
               </div>
             </div>
           </a>
@@ -726,79 +792,138 @@
         <img src="media/andjeo-desni.png">
       </div>
       <div class="grid-container">
-      <div class="grid-item item1" style="background-image: url('media/crkva-altina-lazareva-subota-2021.jpg');">
+      <div class="grid-item item1" style="background-image: url('media/spasovdanska-litija-2022.jpg');">
         <div class="ecliptor"></div>
         <div class="titleHolder">
-          <a href="article.html">
+          <a href="http://www.spc.rs/sr/hiljade_beogradjana_pratilo_patrijarha_u_molitvenoj_litiji_za_mir">
             <p class="trLit">Subota, 24. april 2021.</p>
-            <h5 class="trLit">Lazareva subota u našem hramu na Altini</h5>
+            <h5 class="trLit">Hiljade Beograđana pratilo patrijarha u molitvenoj litiji za mir</h5>
           </a>
         </div>
       </div>
-      <div class="grid-item item2" style="background-image: url('media/spasovdanska-litija-2021.jpg');">
+      <div class="grid-item item2" style="background-image: url('media/sveti-apostoli-vartolomej-i-varnava.jpg');">
         <div class="ecliptor"></div>
         <div class="titleHolder">
-          <a href="article.html">
-            <p class="trLit">Petak, 11. jun 2021.</p>
-            <h5 class="trLit">Spasovdanska litija u Beogradu</h5>
+          <a href="http://www.spc.rs/sr/sveti_slavni_svehvalni_apostoli_vartolomej_varnava">
+            <p class="trLit">Petak, 24. jun 2022.</p>
+            <h5 class="trLit">Sveti Apostoli Vartolomej i Varnava</h5>
           </a>
         </div>
       </div>
-      <div class="grid-item item3" style="background-image: url('media/poslednja-vecera.jpg');">
+      <div class="grid-item item3" style="background-image: url('media/prijemni-za-bogosloviju-2022.jpg');">
         <div class="ecliptor"></div>
         <div class="titleHolder">
-          <a href="article.html">
-            <p class="trLit">Nedelja, 13. jun 2021.</p>
-            <h5 class="trLit">Tribina o suštini tajne večere</h5>
+          <a href="http://www.spc.rs/sr/odlichni_rezultati_prijemnog_ispita_za_upis_u_bogoslovije">
+            <p class="trLit">Četvrtak, 23. jun 2021.</p>
+            <h5 class="trLit">Odlični rezultati na prijemnom za bogoslovije</h5>
           </a>
         </div>
       </div>  
-      <div class="grid-item item4" style="background-image: url('media/prica-o-jovu.jpg');">
+      <div class="grid-item item4" style="background-image: url('media/prof-dr-protojerej-stavrofor-milos-vesin.jpg');">
         <div class="ecliptor"></div>
         <div class="titleHolder">
-          <a href="article.html">
-            <p class="trLit">Ponedeljak, 30. avgust 2021.</p>
-            <h5 class="trLit">Otvoreno predavanje o biblijskim pričama</h5>
+          <a href="https://www.tvhram.rs/emisije/4241/vrlinoslov-kako-pobediti-depresiju-protojerej-stavrofor-prof-milos-vesin">
+            <p class="trLit">Sreda, 22. jun 2022.</p>
+            <h5 class="trLit">Vrlinoslov: protojerej Miloš Vesin - Kako pobediti depresiju</h5>
           </a>
         </div>
       </div>
-      <div class="grid-item item5" style="background-image: url('media/skuti-crkva-altina.jpg');">
+      <div class="grid-item item5" style="background-image: url('media/episkop-justin.jpeg');">
         <div class="ecliptor"></div>
         <div class="titleHolder">
-          <a href="article.html">
-            <p class="trLit">Nedelja, 27. Jun 2021.</p>
-            <h5 class="trLit">Skuti ponovo nastupili ispred našeg hrama</h5>
+          <a href="http://www.slovoljubve.com/cir/Newsview.asp?ID=34208">
+            <p class="trLit">Petak, 23. Jun 2022.</p>
+            <h5 class="trLit">Episkop Justin: Hrišćanska vera podrazumeva žrtvu i rad na sebi</h5>
           </a>
         </div>
       </div>
-      <div class="grid-item item6" style="background-image: url('media/litija-novi-beograd-zemun.jpg');">
+      <div class="grid-item item6" style="background-image: url('media/porfirije-tuzla-jun-2022.jpeg');">
         <div class="ecliptor"></div>
         <div class="titleHolder">
-          <a href="article.html">
-            <p class="trLit">Nedelja, 6. oktobar 2021.</p>
-            <h5 class="trLit">Litija u znak podrške našoj crkvi u Crnoj Gori</h5>
+          <a href="http://www.slovoljubve.com/cir/Newsview.asp?ID=34232">
+            <p class="trLit">Nedelja, 26. jun 2022.</p>
+            <h5 class="trLit">Patrijarh srpski Porfirije svečano dočekan u Tuzli</h5>
           </a>
         </div>
       </div>
     </div>
     </section>
+<style type="text/css">
+
+</style>
+    <section id="patrijarh">
+        <div class="framedimg">
+      <!--    <img src="media/frame2.png" class="framer"> -->
+          <img src="media/patrijarh-porfirije.jpg" class="framedPicture">
+        </div>
+        <div>
+          <p class="trLit">Njegova Svetost</p>
+          <p class="trLit">Arhiepiskop pećki</p>
+          <p class="trLit">Mitropolit beogradsko-karlovački i</p>
+          <p class="trLit">Patrijarh srpski g. Porfirije</p>
+        </div>
+    </section>
 
     <section id="about">
       <div class="row">
           <div class="half">
-            <img src="media/crkva-altina.jpg" style="width: 100%; vertical-align:bottom;">
+            <img src="media/galerija/crkva-altina-6.jpg" style="width: 100%; vertical-align:bottom;">
           </div>
           <div class="half graybkg">
             <div class="txtHld angHdl">
               <h2 class="trLit mainTitle">Osnivanje hrama </h2>
               <img src="media/andjeo-crno-beli.png" style="height: 90px; vertical-align: middle;">
               <div>
-                <p class="trLit">Temelji hrama posvećenog Svetim mučenicima, đakonu Avakumu i igumanu Pajsiju, osveštani su 15. novembra 2009, na dan upokojenja Njegove svetosti patrijarha Pavla. Hram se već više od deset godina gradi prilozima dobrotvora i sada su radovi pri kraju.</p>
-                <p class="trLit">Hram je podignut je u srpsko-vizantijskom stilu, prema projektu arhitekte Ljubice Bošnjak. Freskopisan je po idejnom rešenju slikara Dragomira Marunića i sa autorskim učešćem slikarskog tima.</p>
-                <p class="trLit">Na radost verujućih parohijana, ali i onih koji su učestvovali u njegovom oslikavanju, hram je sredinom 2020. godine zablistao je u punom sjaju.</p>
+              <br>
+                <p class="trLit">Temelji hrama posvećenog Svetim mučenicima, đakonu Avakumu i igumanu Pajsiju, osvetio je V.P. Mitropolit crnogorsko-primorski g. Amfilohije 15. novembra 2009, na dan blaženog usnuća Njegove svetosti patrijarha Pavla.</p><br>
+                <p class="trLit">Zvona je osvetio vikarni episkop hvostanski, g.Atanasije, 4. decembra 2010, na Vavedenje Presvete Bogorodice, a časne krstove Nj.S. Patrijarh srpski g. Irinej 23. avgusta 2011. </p><br>
+                <p class="trLit">Hram je podignut je u srpsko-vizantijskom stilu, prema projektu arhitekte Ljubice Bošnjak. Freskopisan je po idejnom rešenju slikara Dragomira Marunića i sa autorskim učešćem slikarskog tima.</p><br>
+                <p class="trLit">Već više od deset godina se gradi prilozima dobrotvora. Na radost verujućih parohijana, ali i onih koji su učestvovali u njegovom oslikavanju, hram je sredinom 2020. godine zablistao u punom sjaju.</p>
+                <br>
+                <p style="text-align: center; text-decoration: underline;"><a class="trLit" href="galerija-slika.html">Galerija slika</a></p>
               </div>
             </div>
           </div>
+        </div>
+    </section>
+    <section id="elders">
+        <div class="angHdl">
+          <img src="media/crkva.png" style="vertical-align: baseline; padding-left: 30px;">
+          <h2 class="trLit mainTitle"> Sveštenstvo i osoblje hrama</h2>
+        </div>
+      <div class="row">
+        <div class="card">
+          <img class="sym" src="media/logo.svg">
+          <div class="cardTxtHld">
+            <h4 class="trLit">jerej Boris Savić</h4>
+            <p class="trLit">Starešina hrama</p>
+            <p class="trLit">Parohija 2</p>
+            <p><a href="tel:+381693006650" style="font-family: Montserrat; font-size: 15px; padding: 10px 5px;">+381693006650</a></p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="sym" src="media/logo.svg">
+          <div class="cardTxtHld">
+            <h4 class="trLit">protojerej-stavrofor Miladin Vukomanović</h4>
+            <p class="trLit">Parohija 1</p>
+            <p><a href="tel:+381653774979" style="font-family: Montserrat; font-size: 15px; padding: 10px 5px;">+381653774979</a></p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="cardTxtHld">
+            <h4 class="trLit">Dušica Milivojević</h4>
+            <p class="trLit">radnik u prodavnici hrama</p>
+            <p><a href="tel:+38163583421" style="font-family: Montserrat; font-size: 15px; padding: 10px 5px;">+38163583421</a></p>
+          </div>
+        </div>
+
+      </div>
+        <div class="textHolder">
+          <p class="trLit">Područje Altine je podeljeno na dve parohije.</p>
+          <br>
+          <p class="trLit">Parohija 1: Krajiška, Vojni put 1. deo, Vojni put 2. deo, Dobanovački put, Ratarski put, deo ulice Ugrinovački put do ulice Ugrinovački put 6. deo i Juga Grizelja, Ugrinovački put 2. deo, Dragiše Vasića, Hemingvejeva, Abebe Bikile, Servantesova, Juga Grizelja (neparna, leva strana), Joza Laurenčića (neparna, leva strana), Džesija Ovensa, Slobodana Glumca, Radenka Miševića, Zire Adamović do ulice Juga Grizelja, Zuke Džumhura, Miroslava Antića, Aleksandra Popovića, Musorskog, Oskara Daviča, Pavla Vujisića do ulice Episkopa Nikolaja i Ljiljane Krstić.</p>
+          <br>
+          <p class="trLit">Parohija 2: Ugrinovački put 6. deo, Juga Grizelja (parna, desna strana), Jasmine Jovanović, Zire Adamović do ulice Juga Grizelja, Taška Načića, Slobodana Đurića, Simeona Končarevića, deo ulice Ugrinovački put od ulice Ugrinovački put 6. deo i Juga Grizelja do Male pruge, Justina Popovića, Pavla Vujisića so ulice Episkopa Nikolaja, Borhesova, Akira Kurosave, Kortesarova, Aleksandra Petrovića, Konstantina Kavafija, Grigorija Božovića, Amadova, Emila Zlatopeka, Mije Aleksića, Episkopa Sergeja, Simona Bolivara, Dijega Rivere, Svetomira Đukića, Ugrinovački put 18, 27, 34, 66 i 99.deo.</p>
         </div>
     </section>
 
@@ -816,22 +941,33 @@
               <img src="media/andjeo-truba.png">
               <h2 class="trLit mainTitle"> Kontakt </h2>
               <hr>
-              <h5 class="trLit">Adresa:</h5>
-              <p class="trLit">Ugrinovački put 16M, 11080 Zemun</p>
-              <h5 class="trLit">Telefon:</h5>
-              <p class="lead">+381 63 88 31 667</p>
-              <p class="lead">+381 60 05 333 52</p>
-              <h5 class="lead trLit">ePošta:</h5>
-              <p>kontakt@linkmarketing.rs</p>
+              <div class="row">
+                <div class="half">
+                  <h5 class="trLit">Adresa:</h5>
+                  <p class="trLit">Lapovska 3, 11080 Zemun</p>
+                  <h5 class="trLit">Telefon:</h5>
+                  <p class="lead">+381 63 583 421</p>
+                  <p class="lead">+381 69 300 6650</p>
+                  <p class="lead">+381 65 377 4979</p>
+                  <h5 class="lead trLit">ePošta:</h5>
+                  <p>kontakt@crkvaaltina.rs</p>
+                </div>
+                <div class="half linkovi">
+                  <a href="http://www.spc.rs/"><img src="media/srpska-pravoslavna-crkva.png" style="height:90px; vertical-align: middle; margin-bottom: 10px;"></a>
+                  <a href="https://www.tvhram.rs/"><img src="media/tv-hram.png" style="height:65px; vertical-align: middle; margin-bottom: 15px;"></a>
+                  <a href="http://www.slovoljubve.com/cir/Home.asp"><img src="media/radio-slovo-ljubve.png" style="height:70px; vertical-align: middle; margin-bottom: 15px;"></a>
+                  <a href="https://svetosavlje.org/"><img src="media/svetosavlje.png" style="height:57px; vertical-align: middle;"></a>
+                </div>
+              </div>
             </div>
           </div>
           <div class="half">
             <form class="txt-holder input-form" action="contact_me.php" method="POST">
               <h4 class="trLit">Pišite na našu ePoštu</h4>
-              <input class="input" type="text" id="name" name="name" required placeholder="Ime i prezime">
-              <input class="input" type="email" id="email" name="email" required placeholder="Vaš E-Mail">
-              <input class="input" type="text" id="phone" name="phone" placeholder="Vaš telefon">
-              <textarea class="input" id="message" name="message" required placeholder="Pitajte sve što Vas zanima..." style="height:200px"></textarea>
+              <input class="input" type="text" id="name" name="name" required placeholder="Име и презиме">
+              <input class="input" type="email" id="email" name="email" required placeholder="Ваша еПошта">
+              <input class="input" type="text" id="phone" name="phone" placeholder="Ваш телефон">
+              <textarea class="input" id="message" name="message" required placeholder="Питајте шта Вас занима..." style="height:200px"></textarea>
               <button type="submit" name="submit" class="my-button"> <span class="trLit">Pošalji</span> <img src="media/paper-plane.png" style="height: 40px;"></button>
             </div>
           </form>
